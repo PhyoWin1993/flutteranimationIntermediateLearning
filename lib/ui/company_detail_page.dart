@@ -140,7 +140,7 @@ class CompanyDetailsPage extends StatelessWidget {
             color: Colors.white.withOpacity(0.79),
             margin: const EdgeInsets.symmetric(vertical: 14.0),
             width: animation.dividerWidth.value,
-            height: 1.0,
+            height: 2.0,
           ),
 
           //
@@ -161,7 +161,7 @@ class CompanyDetailsPage extends StatelessWidget {
       padding: const EdgeInsets.only(top: 14.0),
       child: Transform(
         transform: Matrix4.translationValues(
-            animation.courseScrollerXTranslation.value, 0.0, 0.0),
+            0.0, animation.courseScrollerXTranslation.value, 0.0),
         child: SizedBox.fromSize(
           size: new Size.fromHeight(250.0),
           child: new ListView.builder(
@@ -176,4 +176,18 @@ class CompanyDetailsPage extends StatelessWidget {
       ),
     );
   }
+
+  // _createCourseScroller() {
+  //   return new Container(
+  //     height: 250.0,
+  //     child: ListView.builder(
+  //         scrollDirection: Axis.horizontal,
+  //         itemCount: company.courses.length,
+  //         padding: const EdgeInsets.symmetric(horizontal: 7.0),
+  //         itemBuilder: (_, int index) {
+  //           var course = company.courses[index];
+  //           return new CourseCard(course);
+  //         }),
+  //   );
+  // }
 }
